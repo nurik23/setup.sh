@@ -13,7 +13,7 @@ Vagrant(){
 var=`vagrant --version`
 if [ "$?" != "0" ]; then
    echo " 'vagrant' is currently not installed "
-   echo -n "Enter Yes if you wont to install vagrant :  "
+   echo -n "Enter 'Yes' if you wont to install vagrant :  "
    read x
    if [ $x == "Yes" ];then
    wget https://releases.hashicorp.com/vagrant/2.0.1/vagrant_2.0.1_x86_64.deb	
@@ -28,7 +28,7 @@ Libvirt(){
 lib=`virsh --version`
 if [ "$?" != "0" ]; then
    echo " 'virsh' is currently not installed "
-   echo -n "Enter Yes if you wont to install libvert-bin : "
+   echo -n "Enter 'Yes' if you wont to install libvert-bin : "
    read x
    if [ $x == "Yes" ];then
    sudo apt install qemu-kvm libvirt-bin
@@ -42,6 +42,7 @@ fi
 
 VagrantLibvirt(){
 VL=`sudo vagrant plugin list`
+echo "If you want to install vagrant-libvirt plagin enter 'Yes' "
 if [ "$?" != "0" ]; then
    echo " 'vagrant-libvirt' is currently not installed "
    echo -n "Enter Yes if you wont to install vagrant-libvirt : "
